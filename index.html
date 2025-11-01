@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>To-Do List Web - Nana</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="app-container">
+
+    <!-- Kuromi & Melody icons inside app container corners -->
+    <img src="images/cat.png.jpeg" alt="" class="corner-icon top-left" />
+    <img src="images/kuromi corner.png.jpeg" alt="" class="corner-icon top-right" />
+    <img src="images/kuromimelody.png.jpeg" alt="" class="corner-icon bottom-left" />
+    <img src="images/Pixel Flower.png.jpeg" alt="" class="corner-icon bottom-right" />
+
+    <h1 class="app-title">Welcome to Nana's To-Do List</h1>
+
+
+    <!-- User Profile -->
+    <section class="user-profile">
+      <h2>Personalize Your Space</h2>
+      <form id="user-form" autocomplete="off">
+        <input
+          type="text"
+          id="user-name"
+          placeholder="Enter your name"
+          aria-label="Enter your name"
+          required
+        />
+        <input
+          type="url"
+          id="user-link"
+          placeholder="Enter a link (e.g. ur blog)"
+          aria-label="Enter link"
+        />
+        <button type="submit" id="user-save-btn" aria-label="Save User Info">Save</button>
+      </form>
+      <p id="welcome-msg" class="welcome-msg"></p>
+    </section>
+
+    <!-- ToDo form -->
+    <form id="todo-form" autocomplete="off" aria-label="Add new todo item">
+      <input
+        type="text"
+        id="todo-input"
+        placeholder="Add a new to-do..."
+        required
+        aria-required="true"
+        aria-describedby="todoHelp"
+      />
+      <input type="date" id="due-date" aria-label="Choose due date" />
+      <select id="priority" aria-label="Select priority">
+        <option value="low" selected>Low Priority</option>
+        <option value="medium">Medium Priority</option>
+        <option value="high">High Priority</option>
+      </select>
+      <button type="submit" id="add-btn" aria-label="Add To-Do Item">+</button>
+    </form>
+    <small id="todoHelp">You can add a task with due date and priority.</small>
+
+    <div class="filters">
+      <select id="filter-status" aria-label="Filter to-dos by status">
+        <option value="all">All Tasks</option>
+        <option value="pending">Pending</option>
+        <option value="completed">Completed</option>
+        <option value="high">High Priority</option>
+        <option value="medium">Medium Priority</option>
+        <option value="low">Low Priority</option>
+      </select>
+
+      <button id="delete-all-btn" aria-label="Delete all to-dos">Delete All</button>
+    </div>
+
+    <div class="info-panel" aria-live="polite" aria-atomic="true"></div>
+
+    <table id="todo-table" aria-label="To-Do List Table">
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Due Date</th>
+          <th>Priority</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="5" class="no-tasks">No tasks found</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Footer Content -->
+    <footer>
+      <p class="text-center text-gray-300">&copy; 2025 Todo List Website - Nazla</p>
+    </footer>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
